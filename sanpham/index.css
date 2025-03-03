@@ -1,0 +1,19 @@
+.sanpham{
+    width: 887px;
+height: 661px;
+flex-shrink: 0;
+
+border-radius: 15px;
+background: #FFF;
+box-shadow: 0px 24px 28px 9px rgba(179, 193, 217, 0.33);
+
+display: flex;
+justify-content: center; /* Căn giữa theo chiều ngang */
+align-items: center; /* Căn giữa theo chiều dọc */
+height: 100vh; /* Chiều cao toàn màn hình */
+margin: 0;
+
+}
+.chitiet{
+    
+}
