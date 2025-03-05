@@ -1,0 +1,44 @@
+body{
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    
+  
+}
+.header{
+    display: flex;
+    align-content: space-between;
+    justify-content: space-around;
+    
+}
+.search-box{
+    display: flex;
+    align-items: center;
+   
+}
+.option>ul{
+display: flex;
+}
+.option>ul>li{
+    margin-left: 10px;
+}
+.search-box>p{
+    margin-right: 8px;
+}
+.search-box>input{
+    display: flex;
+    width: 100px;
+    height: 10px;
+    padding: 5px;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid var(--151-b-32, #151B32);
+    
+}
+a{
+    
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    
+}
