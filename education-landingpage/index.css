@@ -81,8 +81,9 @@ ul>svg {
 
 .foo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 80px;
+ margin-right: 55px;
 }
 
 .name {
