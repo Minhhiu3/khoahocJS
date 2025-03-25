@@ -1,5 +1,5 @@
 function taxiBill(){
-    let km = parseFloat(prompt("Nhập a: "));
+    let km = parseFloat(prompt("Nhập km: "));
     if (km <= 1){
         alert(`Thanh toán ${km*10000}`);
     }

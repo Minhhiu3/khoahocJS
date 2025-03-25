@@ -1,4 +1,4 @@
-function findMaxNubers(a,b,c){
+function findMaxNubers(){
     let a = parseFloat(prompt("Nhập a: "));
     let b = parseFloat(prompt("Nhập b: "));
     let c = parseFloat(prompt("Nhập c: "));
@@ -7,4 +7,4 @@ function findMaxNubers(a,b,c){
     else alert(c);
 }
 
-findMaxNubers(5,10,15); // 15
+findMaxNubers(); // 15
