@@ -38,15 +38,24 @@ const primeArray = [1,1,2,5,3,7,4,2,9,9,5,6,7,8,9,10,11,12,13,14,15];
 function  findMinMaxAverage(arr){
     let min = arr[0];
     let max = arr[0];
+    let indexMax = [0];
+    let indexMin = [0];
     let avg = 0;
 
     for(let i = 1; i < arr.length; i++){
-        if(arr[i] < min) min = arr[i];
-        if(arr[i] > max) max = arr[i];
+        if(arr[i] < min) 
+            {min = arr[i]
+                indexMin = [i]
+            };
+        if(arr[i] > max) 
+            {max = arr[i]
+                indexMax = [i]
+
+            };
         avg += arr[i];
     }
     avg /= arr.length;
-    return {min, max, avg};
+    return {min,indexMin, max,indexMax, avg};
 }
 
 console.log ("tim so nguyen to")
