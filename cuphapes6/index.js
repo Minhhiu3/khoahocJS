@@ -246,14 +246,15 @@ function filterNumber(arr){
 //console.log(filterNumber(bbb));
 
 const student = [
-    { name: "John", age: 18 },
-    { name: "Alice", age: 20 },
-    { name: "Bob", age: 17 },
-    { name: "Charlie", age: 19 },
-    { name: "David", age: 21 },
-    { name: "Eve", age: 16 },
-    { name: "Frank", age: 22 },
-    { name: "Grace", age: 23 },
+    { name: "john", age: 18 },
+    { name: "alice", age: 20 },
+    { name: "aob", age: 17 },
+    { name: "bob", age: 17 },
+    { name: "charlie", age: 19 },
+    { name: "david", age: 21 },
+    { name: "eve", age: 16 },
+    { name: "frank", age: 22 },
+    { name: "grace", age: 23 },
 ];
 function filterStudentAge(arr){
     return arr.filter((item) => item.age <= 18);
@@ -303,5 +304,162 @@ function testEvery(arr){
     return arr.every((item) => item.sex === "male");
 
 }
-console.log(testEvery(students));
+//console.log(testEvery(students));
 //console.log(testSome(students));
+///sort--------------------------------------------------------------------------------------------------------
+/*
+* input: không nhập hoặc nhập 1 compareFunction
+* thay đổi mảng ban đầu và nếu không muốn thay đổi mảng ban đầu thì dùng toSorted()
+* chỉ thực hiện so sánh chuỗi, nếu so sánh số thì cần truyền vào 1 hàm so sánh 
+(
+arr.sort((a, b) => a - b); // Tăng dần
+arr.sort((a, b) => b - a); // Giảm dần
+)
+* compareFunction: âm thì a đứng trước b, dương thì b đứng trước a, ===0 thì không thay đổi vị trí của a và b
+* nếu không có compareFunction thì mặc định là sắp xếp theo thứ tự tăng dần của chuỗi
+* 
+*/
+const arr7 = [
+    {id: 1, name: "product1", price: 100},
+    {id: 2, name: "product2", price: 600},
+    {id: 3, name: "product3", price: 500},
+    {id: 4, name: "product4", price: 200},
+    {id: 5, name: "product5", price: 300},
+    {id: 6, name: "product6", price: 50},
+];
+
+//sắp xếp tăng và giảm dần theo giá(a-b là tăng dần b-a là giảm dần)
+function sortArr(arr){
+    arr.sort((a, b) => a.price - b.price);
+    return arr;
+}
+function sortArrr(arr){
+    arr.sort((a,b) => b.price - a.price)
+    return arr;
+}
+//console.log(arr7);
+//console.log(sortArr(arr7));
+//console.log(sortArrr(arr7));
+
+//hàm nhận vào mảng user và trả về danh sách theo tên a-z
+function sortUser(arr){
+    const arrCopy = structuredClone(arr);
+    arrCopy.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1; // a đứng trước b
+        }
+    });
+    return arrCopy;
+}
+//console.log(sortUser(student));
+
+//sắp xếp mảng thưa với các chuỗi từ bé tới lớn và xếp trước, 
+//sau đó đến chuỗi xếp theo a-z, falsy để cuối mảng và bỏ qua empty.
+const arrSparse = [1, 20,12,15,52,45, 3, "a", "b", "c", , , , 4, 5, 6, null, undefined, false, true, "", 0,1,,-1];
+function sortSparse(arr){
+    const arrClone = arr.flat(1);
+    const falsyArr = [];
+    const stringArr = [];
+    const numberArr = [];
+    arrClone.forEach(Element => {
+        if(!Element) falsyArr.push(Element);
+        else if (typeof Element === "number") numberArr.push(Element);
+        else if (typeof Element === "string") stringArr.push(Element);
+        //else if (typeof Element === 0) number.push(Element);
+
+    })
+    result = numberArr.sort((a,b)=> {
+        if(a < b) return -1;
+        else if (a > b) return 1;
+        else return 0;
+    }).concat(stringArr).concat(falsyArr);
+    return result;
+}
+//console.log(sortSparse(arrSparse));
+
+//--------------------reduce--------------------------------------------------
+//reduce là hàm duy nhất có thể trả về bất kỳ kiểu dữ liệu nào, không chỉ là mảng
+//reduce là hàm duy nhất có thể thay đổi giá trị của mảng ban đầu
+//reduce là hàm duy nhất có thể trả về giá trị cuối cùng của mảng
+//---
+//reduce((accumulator, currentValue, index, array) => { }, initialValue)
+//accumulator: giá trị trước đó
+//currentValue: giá trị hiện tại 
+//index: vị trí của giá trị hiện tại
+//array: mảng ban đầu
+//initialValue: giá trị khởi tạo, nếu không có thì giá trị đầu tiên của mảng sẽ là giá trị khởi tạo
+//trong trường hợp mảng rỗng thì sẽ trả về undefined
+
+const testReduce = [1,2,3,4];
+function reduceTest(arr){
+    const result = arr.reduce((a,b) => a+b);
+        // console.log(a); // giá trị trước đó
+        // console.log(b); // giá trị hiện tại
+        // console.log(c); // index của giá trị hiện tại
+        // console.log(d); // mảng ban đầu
+        // console.log(a+b); // trả về giá trị cuối cùng
+   
+    return result;
+}
+//console.log(reduceTest(testReduce));
+
+//tính giai thừa ch input là số
+function factorial(n){
+    for(let i=n; i>0;i++){
+        n *= i-1;
+    }
+}
+//console.log(factorial(5)); // 120
+
+//tính tich các phần tử trong mảng
+function multipicationArr(arr){
+    return arr.reduce((a,b)=> a*b);
+    //arr.reduce((acc,cur,index,arr)=>{
+        //     return acc * cur;})
+
+}
+console.log(multipicationArr([1,2,3,4,5])); 
+//tính tích các phần tử trong mảng 
+
+
+const animalReduce = ["dog", "cat", "fish", "bird", "lizard", "human", "dog", "cat", "fish", "bird", "lizard", "humann"];
+//  function countAnimal(arr){
+//     const result = arr.reduce((acc,cur,index,arr) => {
+//         if(!acc[cur]){
+//             acc[cur] =1;
+//         } 
+//         else {
+//             acc[cur]++;
+//         }
+//         console.log(`${cur}: ${acc[cur]}`);
+//         return acc;
+//     });
+//     return result;
+//  }
+
+//loaị bỏ các phần tử trùng lặp trong mảng và trả về mảng mới
+ function clearDuplicate(arr){
+    return arr.reduce((acc,cur,index,arr) => {
+        if(!acc.includes(cur)){
+            acc.push(cur);
+        } 
+        return acc;
+    },[]);
+ } 
+
+//đếm số lần xuất hiện
+function countAnimal(arr){
+    const result = arr.reduce((acc,cur,index,arr) => {
+        if(acc[cur]){
+            acc[cur] ++;
+        } 
+        else {
+            acc[cur]=1;
+        }
+        return acc;
+    },[]);
+    return result;
+    
+ }
+ console.log(clearDuplicate(countAnimal(animalReduce)));
+console.log(countAnimal(animalReduce));
