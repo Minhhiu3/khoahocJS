@@ -6,10 +6,16 @@ const users = [
     { fullname: "Nguyen Van E", age: 32, address: "LangSon" },
   ];
   function groupBy(arr, key){
-    return arr.reduce((result, currentValue) => {
-        (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue);
-        return result;
-    }, []);
+    return arr.reduce((acc, currentValue) => {
+        // (acc[currentValue[key]] = acc[currentValue[key]] || []).push(currentValue);
+        if(!acc[currentValue[key]]) {
+          acc[currentValue[key]] = [currentValue];
+        }else {
+          acc[currentValue[key]].push(currentValue);
+        }
+
+        return acc;
+    }, {});
   }
   console.log(groupBy(users, 'address'));
   // function groupBy(arr,key){
@@ -18,3 +24,6 @@ const users = [
   //       return result;
   //   }, {});
   // }
+  // console.log(users);
+  // console.log(users.splice(0, 2));
+  // console.log(users);
