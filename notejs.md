@@ -1,3 +1,6 @@
+# phong cách code
+* kebab-case
+
 # array (mảng)
 - có thể thêm phần tử vào mảng: arr[1]="hieu";
 - độ dài của mảng sẽ bằng index(mã số) phần tử cuối cùng +1
@@ -81,3 +84,16 @@ duyệt qua từng phần tử của mảng và trả về true/false
 * flat là phương thức của array giúp làm phẳng mảng và tạo ra 1 mảng mới với tất cả các mảng con,phần tử của mảng cũ.
 * .flat(độ sâu);
 * ví dụ: [1,[2,3],4,[5,[6]]].flat(1) thì sẽ ra [1,2,3,4,5,[6]]
+
+# sort
+* sort là phương thức của mảng giúp xắp xếp lại các phần tử trong mảng(nếu là mảng chứa các object key value thì có thể . tới)
+* arr.sort((a,b) => a.price - b.price)
+
+# regex (biểu thức chính quy)
+* regex trong js là 1 công cụ mạnh để tìm kiếm,kiểm tra, thay thế chuỗi.
+
+# settimeout
+* setTimeout(cancelIdleCallback, time(mili giay))
+
+# setInterval
+*
