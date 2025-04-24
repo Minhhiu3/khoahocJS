@@ -42,4 +42,6 @@ function clockRealTime() {
     document.getElementById('clock').innerText = `${h}:${m}:${s}`;
 }
 clock()
-setInterval(clockRealTime(), 1000)
+setInterval(() => {
+    clockRealTime()
+}, 1000)
