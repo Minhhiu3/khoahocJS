@@ -97,3 +97,6 @@ duyệt qua từng phần tử của mảng và trả về true/false
 
 # setInterval
 *
+
+# stopPropagation()
+* ngăn chặn sự kiện nổi bọt của js
