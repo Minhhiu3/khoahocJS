@@ -105,7 +105,11 @@ function toggleEdit(id) {
     engValue.readOnly = !isReadOnly;
     mathValue.readOnly = !isReadOnly;
 
-    suaBtn.innerHTML = isReadOnly ? "luu" : "sua";
+    if (isReadOnly) {
+        suaBtn.innerHTML = "luu"
+    } else {
+        suaBtn.innerHTML = "sua"
+    }
 }
 
 
