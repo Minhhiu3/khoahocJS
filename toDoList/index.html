@@ -158,6 +158,7 @@
         display: none;
     }
 </style>
+<!-- <button onclick="deleteTodo()" class=""></button> -->
 
 <body>
     <div class="todo-container">
@@ -166,6 +167,7 @@
             <div class="input-group">
                 <input type="text" id="todoInput" placeholder="Nhập công việc mới..." />
                 <button id="actionButton" onclick="addTodo()">Thêm</button>
+                <button id="actionButton" onclick="resertTodo()">Resert</button>
             </div>
             <div id="errorMessage" class="error-message">Vui lòng nhập công việc!</div>
         </div>
@@ -174,10 +176,15 @@
             <button onclick="filterTodos('active')">Chưa hoàn thành</button>
             <button onclick="filterTodos('completed')">Hoàn thành</button>
         </div>
-        <ul class="todo-list" id="todoList"></ul>
+        <ul class="todo-list" id="todoList">
+            <li class="todo-item"><span class="task-text">abc</span></li>
+        </ul>
     </div>
-    <ul class="todo-list" id="todoList"></ul>
+    <ul class="todo-list" id="todoList">
+
+    </ul>
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>

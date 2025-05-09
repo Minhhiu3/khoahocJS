@@ -96,7 +96,56 @@ duyệt qua từng phần tử của mảng và trả về true/false
 * setTimeout(cancelIdleCallback, time(mili giay))
 
 # setInterval
-*
-
+* setInterval(() => {}, Thời gian trễ);
+* Liên tục gọi lại 1 hàm hoặc 1 đoạn code với thời gian cố định giữa mỗi lần gọi
 # stopPropagation()
 * ngăn chặn sự kiện nổi bọt của js
+
+# id.innerHTML = ""
+* sửa nội dung của 1 khối text html theo id
+
+# id.style.thuộc tính = "trạng thái của thuộc tính"
+* sửa css
+
+# .className = `ten thuoc tinh css`
+* gán thuộc tính css cho thẻ
+
+# cấu trúc gán function cho onclick
+  `<button onclick="deleteTodo('${todo.id}')" class="delete">xoa</button>`
+* 
+
+# todoList.appendChild(li);
+* todo list là phần tử DOM đại diện cho danh sách todo trong html
+* li là đại diện cho phần tử trong danh sách mới được tạo trong vòng lặp foreach mang thông tin của từng todo theo mỗi lần lặp
+
+* appenCHild là thêm li vào cuối danh sách todo
+
+# getItem và setItem
+* function getData() {
+
+    //lay dl trong local s
+    const dataLocal = JSON.parse(localStorage.getItem('todos') || "[]");
+    return dataLocal;
+}
+//
+function handleLocal(todo) {
+    //lưu dữ liệu vào local
+    return localStorage.setItem('todos', JSON.stringify(todo));
+}
+
+# delete 
+* dung filter de tim ra cai id duoc bam
+function deleteTodo(id) {
+    const todoUI = getData().filter(todo => todo.id !== id);
+    handleLocal(todoUI);
+    renderUI(todoUI);
+}
+# edit dung find
+
+# tofix là phương thức của number 
+* 4.44444.tofixed(2) out put = 4.44
+
+# JSON.stringify()
+* là phương thức giúp biến dữ liệu của js thành dạnh chuỗi json
+* console.log(JSON.stringify({ x: 5, y: 6 }));
+// Expected output: '{"x":5,"y":6}' 

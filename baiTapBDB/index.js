@@ -31,10 +31,14 @@ function logUserById(x) {
         const usPurchase = allPurcharse.filter(p => p.userId === x);
         console.log("sp cua id nay la :", usPurchase);
         let lastPrice = 0;
+        let cout = 0;
         for (let i = 0; i < usPurchase.length; i++) {
             lastPrice += usPurchase[i].price;
+            cout++;
         }
         console.log("tong tien cua don hang la :", lastPrice);
+        console.log(cout);
+
 
 
 

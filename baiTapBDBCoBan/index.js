@@ -17,13 +17,13 @@ function getDataPromise() {
         }, 2000);
     })
 }
+
 // Sử dụng
 
-setTimeout(() => {
-    getDataPromise()
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
-}, 1000); // Sau 1 giây in ra: [1, 2, 3, 4]
+getDataPromise()
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+
 
 
 //bai3
@@ -31,7 +31,6 @@ async function getDataAsyncAwait() {
     try {
         const data = await getDataPromise();
         console.log("3", data);
-
 
     }
     catch (error) {
