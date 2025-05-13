@@ -149,3 +149,10 @@ function deleteTodo(id) {
 * là phương thức giúp biến dữ liệu của js thành dạnh chuỗi json
 * console.log(JSON.stringify({ x: 5, y: 6 }));
 // Expected output: '{"x":5,"y":6}' 
+
+# paginate 
+- có 3 tham số là: số lượng bản gi(products)
+                   số lượng sản phẩm trên 1 trang (limit)
+                   số trang tối đa (page)
+                   
+                   số bản gi cần bỏ qua để tới 

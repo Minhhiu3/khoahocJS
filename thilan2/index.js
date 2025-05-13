@@ -106,6 +106,7 @@ function toggleEdit(id) {
     mathValue.readOnly = !isReadOnly;
 
     if (isReadOnly) {
+        //if isR la check xem cai kia co phai true ko
         suaBtn.innerHTML = "luu"
     } else {
         suaBtn.innerHTML = "sua"
